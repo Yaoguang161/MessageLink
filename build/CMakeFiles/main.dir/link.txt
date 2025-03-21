@@ -1,0 +1,1 @@
+/usr/sbin/c++  -O0 -Wall -g2 -ggdb CMakeFiles/main.dir/src/main.cpp.o -o main 

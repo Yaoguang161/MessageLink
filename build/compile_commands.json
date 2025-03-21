@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/akie/workspace/MessageLink/build",
+  "command": "/usr/sbin/c++    -O0 -Wall -g2 -ggdb -std=c++11 -o CMakeFiles/main.dir/src/main.cpp.o -c /home/akie/workspace/MessageLink/src/main.cpp",
+  "file": "/home/akie/workspace/MessageLink/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
+}
+]
