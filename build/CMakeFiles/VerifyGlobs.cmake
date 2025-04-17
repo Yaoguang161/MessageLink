@@ -5,7 +5,19 @@ cmake_policy(SET CMP0009 NEW)
 # sources at CMakeLists.txt:18 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/akie/workspace/MessageLink/include/*.h")
 set(OLD_GLOB
-  "/home/akie/workspace/MessageLink/include/test/message.h"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/home/akie/workspace/MessageLink/build/CMakeFiles/cmake.verify_globs")
+endif()
+
+# sources at CMakeLists.txt:18 (file)
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/akie/workspace/MessageLink/include/*.hpp")
+set(OLD_GLOB
+  "/home/akie/workspace/MessageLink/include/Utils/Any.hpp"
+  "/home/akie/workspace/MessageLink/include/Utils/NonCopyable.hpp"
+  "/home/akie/workspace/MessageLink/include/Utils/function_traits.hpp"
+  "/home/akie/workspace/MessageLink/include/test/MessageBus.hpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

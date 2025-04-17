@@ -8,9 +8,9 @@
 //不能 直接存储 std::unique_ptr<T>，因为 std::unique_ptr 不能被拷贝，但可以通过 std::move() 存储并转移所有权。
 struct Any
 {
-    Any(void)        : m_tpIndex(std::type_index(typeid(void)))          {}
-    Any(Any& that)   : m_ptr(that.Clone()),m_tpIndex(that.m_tpIndex)          {}
-    Any(Any && that) : m_ptr(std::move(that.m_ptr)), m_tpIndex(that.m_tpIndex){}
+    Any(void)            : m_tpIndex(std::type_index(typeid(void)))          {}
+    Any(const Any& that) : m_ptr(that.Clone()), m_tpIndex(that.m_tpIndex)         {}
+    Any(Any && that)     : m_ptr(std::move(that.m_ptr)), m_tpIndex(that.m_tpIndex){}
 
     //创建智能指针时， 对于一般的类型，通过std::decay来移除引用和cv符，从而获取原始类型
     template<typename U, class = 

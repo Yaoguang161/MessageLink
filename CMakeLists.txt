@@ -13,7 +13,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 find_package(Threads) ##引入外部依赖包
 
-add_executable(main)   ##这里的ThreadPool(main)
+add_executable(main)   ##MessageLink(main)
 target_link_libraries (main ${CMAKE_THREAD_LIBS_INIT}) ##链接 Thread 库
-file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp include/*.h)
-target_sources(main PUBLIC ${sources})    ##和这里的ThreadPool(main)全局唯一,是运行文件的名字 build/MessageLinkApp(main)运行
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp include/*.h include/*.hpp)
+target_sources(main PUBLIC ${sources})    #MessageLink(main)全局唯一,是运行文件的名字 build/MessageLinkApp(main)运行
